@@ -1,11 +1,21 @@
 {
-  "env": {
-      "browser": true,
-      "node": true
-  },
-  "extends": "airbnb",
-  "parser": "babel-eslint",
-  "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
-  }
+	"parser": "babel-eslint",
+	"extends": [
+    "prettier",
+    "airbnb"
+  ],
+	"env": {
+		"es6": true,
+		"browser": true,
+		"node": true
+	},
+	"globals": {
+		"API_ENDPOINT": true
+	},
+	"rules": {
+    "allow-parens": 0,
+		"react/jsx-filename-extension": 0,
+		"react/require-default-props": 0,
+    "react/forbid-prop-types": 0
+	}
 }
