@@ -1,8 +1,8 @@
 # React Boilerplate 2018
 
-A lightweight starter boilerplate used to bootstrap React applications using the container and presentational component design pattern, Functional CSS (CSS Next) and React Router.
+A lightweight starter boilerplate used to bootstrap React applications using functional CSS (CSS Next) features.
 
-Uses Babel, Webpack and configured with [Airbnb](https://github.com/airbnb/javascript/tree/master/react) eslint out of the box.
+Uses Babel, Webpack and configured with [Airbnb](https://github.com/airbnb/javascript/tree/master/react) eslint and prettier out of the box.
 
 File structure:
 
@@ -19,8 +19,11 @@ File structure:
   -- utils
   -- index.js
 - .eslintrc
+- postcss.config.js
+- prettierrc
 - package.json
 - webpack.config.js
+- .env
 ```
 ## File Structure
 
@@ -76,6 +79,6 @@ fetch(API_ENDPOINT + '/list')
 
 ## Functional CSS
 
-This boilerplate makes use of function CSS using CSS Next features and the [basscss library](http://basscss.com/)
+This boilerplate makes use of functional CSS using CSS Next features and the [basscss library](http://basscss.com/)
 
 
