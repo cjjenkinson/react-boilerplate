@@ -73,3 +73,9 @@ fetch(API_ENDPOINT + '/list')
   .then(response => response.json())
   .then(json => console.log(json))
 ```
+
+## Functional CSS
+
+This boilerplate makes use of function CSS using CSS Next features and the [basscss library](http://basscss.com/)
+
+

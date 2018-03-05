@@ -12,6 +12,10 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader'],
       },
       {
+        test: /\.css/,
+        loader: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
         test: /\.(png|jpeg|jpg)$/,
         loader: 'file-loader',
       },
