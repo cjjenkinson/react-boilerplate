@@ -3,7 +3,7 @@ const webpack = require('webpack');
 require('dotenv').config();
 
 module.exports = {
-  entry: ['react-hot-loader/patch', './src/index.js'],
+  entry: ['react-hot-loader/patch', './src/main.js'],
   module: {
     rules: [
       {
