@@ -1,6 +1,6 @@
 # React Boilerplate 2018
 
-A lightweight starter boilerplate I use to bootstrap React applications using the container and presentational component design pattern.
+A lightweight starter boilerplate used to bootstrap React applications using the container and presentational component design pattern, Functional CSS (CSS Next) and React Router.
 
 Uses Babel, Webpack and configured with [Airbnb](https://github.com/airbnb/javascript/tree/master/react) eslint out of the box.
 
@@ -15,9 +15,8 @@ File structure:
      -- App.css
      -- App.js
      -- App.test.js
-  -- images
+  -- static
   -- utils
-  -- api.js
   -- index.js
 - .eslintrc
 - package.json
@@ -28,10 +27,9 @@ File structure:
 Learn more about [Presentational & Container Components](|https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 
 - Components: presentational components, recieve data via props and are concerned with presentation only
-- Containers: container components, provide data and behaviour and are concerned with how things work 
-- Images: public image assets
+- Containers: container components, provide data and behaviour and are concerned with how things work
+- Static: public image assets, fonts and other related static assets
 - Utils: helpers, formatters and a place to store useful tools
-- api.js: relevant API calls, at some point you may wish to break this into seperate API files e.g products.js, users.js
 - index.js: renders your application from the parent component e.g App
 
 ## ESLint & Style Guide (Airbnb)
@@ -52,3 +50,26 @@ Learn more about [Presentational & Container Components](|https://medium.com/@da
 }
 ```
 
+## Environment Variables
+
+Define your environment variables using .env file.
+
+```shell
+touch .env
+```
+
+As a starter an API_ENDPOINT variable has been defined in the Webpack config. Adding additional environment variable is as simple as defining the constant name and stringifying the variable in your .env file.
+
+```javascript
+new webpack.DefinePlugin({
+    API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
+    // e.g SERVICE_API_KEY: JSON.stringify(process.env.SERVICE_API_KEY)
+}),
+```
+By defining environment variables inside webpack you'll be able to reference them without defining process.env everytime:
+
+```javascript
+fetch(API_ENDPOINT + '/list')
+  .then(response => response.json())
+  .then(json => console.log(json))
+```
