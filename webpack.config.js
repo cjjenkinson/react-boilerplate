@@ -13,7 +13,17 @@ module.exports = {
       },
       {
         test: /\.css/,
-        loader: ['style-loader', 'css-loader', 'postcss-loader'],
+        loader: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]--[hash:base64:5]',
+            },
+          },
+          'postcss-loader',
+        ],
       },
       {
         test: /\.(png|jpeg|jpg)$/,
